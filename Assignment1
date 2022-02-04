@@ -1,0 +1,73 @@
+Assignment 1
+
+1.	What is JDK? JRE? JVM?
+1. JDK (Java Development Kit) is a Kit that provides the environment to develop and execute(run) the Java program. JDK is a kit (or package) that includes two things
+•	Development Tools (to provide an environment to develop your java programs)
+•	JRE (to execute your java program).
+2. JRE (Java Runtime Environment) is an installation package that provides an environment to only run (not develop) the java program (or application) onto your machine. JRE is only used by those who only want to run Java programs that are end-users of your system.
+3. JVM (Java Virtual Machine) is a very important part of both JDK and JRE because it is contained or inbuilt in both. Whatever Java program you run using JRE or JDK goes into JVM and JVM is responsible for executing the java program line by line, hence it is also known as an interpreter.
+2.	What is java compiler?
+A Java compiler is a program that takes the text file work of a developer and compiles it into a platform-independent Java file. Java compilers include the Java Programming Language Compiler (javac), the GNU Compiler for Java (GCJ), the Eclipse Compiler for Java (ECJ) and Jikes.
+3.	Why is java platform independent?
+Java compiler produces a unique type of code called bytecode unlike c compiler where compiler produces only natively executable code for a particular machine.
+When the Java program runs in a particular machine it is sent to java compiler, which converts this code into intermediate code called bytecode. This bytecode is sent to Java virtual machine (JVM) which resides in the RAM of any operating system. JVM recognizes the platform it is on and converts the bytecodes into native machine code. Hence java is called platform independent language.
+4.	What is IDE? Why is it important for developers?
+An IDE, or Integrated Development Environment, enables programmers to consolidate the different aspects of writing a computer program. IDEs increase programmer productivity by combining common activities of writing software into a single application: editing source code, building executables, and debugging.
+5.	Is java case sensitive?
+Java, like most programming languages, is case sensitive
+6.	What do the following key words do?
+static：the keyword static means that the member belongs to a type itself, rather than to an instance of that type.
+Final：The final keyword in java is used to restrict the user. The java final keyword can be used in many contexts. Final can variable, method, or class.
+Public：The public keyword is an access modifier used for classes, attributes, methods, and constructors, making them accessible by any other class.
+Private：The private keyword is an access modifier used for attributes, methods and constructors, making them only accessible within the declared class.
+Void：It is a keyword and used to specify that a method doesn't return anything.
+Null：In Java programming, null can be assigned to any variable of a reference type (that is, a non-primitive type) to indicate that the variable does not refer to any object or array.
+Package：A package is a namespace that organizes a set of related classes and interfaces.
+ Class：A class is a group of objects which have common properties. It is a template or blueprint from which objects are created
+ New：The Java new keyword is used to create an instance of the class.
+7.	What is primitive type and reference type?
+Primitive type: Primitive types are the basic types of data: byte, short , int , long , float , double , Boolean , char . Primitive variables store primitive values.
+Reference type: Reference types are any instantiable class as well as arrays: String , Scanner , Random , Die , int[] , String[] , etc.
+8.	Is parameter passed by value or reference?
+Pass by value means that you are making a copy in memory of the actual parameter's value that is passed in. This is a copy of the contents of the actual parameter. Pass by reference (also called pass by address) means that a copy of the address of the actual parameter is stored.
+9.	What is the output: System.out.println(1 > 0 : “A”:”B”);
+A
+10.	How to define constants in java?
+A constant can make our program more easily read and understood by others. In addition, a constant is cached by the JVM as well as our application, so using a constant can improve performance.
+To define a variable as a constant, we just need to add the keyword “final” in front of the variable declaration.
+11.	What is String? Is it primitive type?
+String is an object, it isn't a primitive type at all, just an array of chars.
+12.	How to check if a String is representing a number?
+Perhaps the easiest and the most reliable way to check whether a String is numeric or not is by parsing it using Java's built-in methods:
+Integer. parseInt(String)
+Float. parseFloat(String)
+Double. parseDouble(String)
+Long. parseLong(String)
+new BigInteger(String)
+
+13.	Write a program to implement the following activity diagram:
+
+ 
+
+
+14.	Write a program to merge two arrays of int.
+public class MergeTwoArrays2 {
+    public static void main(String[] args)
+    {
+          int a[] = { 30, 25, 40 };
+        int b[] = { 45, 50, 55, 60, 65 };
+        int a1 = a.length;
+        int b1 = b.length;
+ 
+        int c1 = a1 + b1;
+
+        int[] c = new int[c1];
+
+        for (int i = 0; i < a1; i = i + 1) {
+            c[i] = a[i];
+        }
+
+        for (int i = 0; i < b1; i = i + 1) {
+              c[a1 + i] = b[i];
+        }
+        for (int i = 0; i < c1; i = i + 1) {
