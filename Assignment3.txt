@@ -1,0 +1,134 @@
+Assignment 3
+● Explain polymorphism.
+○ Means “many forms”.
+○ Run-time polymorphism: override(subclass methods override superclass’s
+methods)
+○ Compile-time polymorphism: overload(multiple methods).
+● What is overloading?
+○ Method overloading is a feature of Java in which a class has more than one
+method of the same name and their parameters are different.
+● What is overriding?
+○ Overriding is a feature that allows a subclass or child class to provide a specific
+implementation of a method that is already provided by one of its super-classes
+or parent classes.
+● What does the final mean in this method: public void
+doSomething(final Car aCar){}
+○ Final means you can't change the value of that variable once it was assigned.
+Meanwhile, the use of final for the arguments in those methods means it won't
+allow the programmer to change their value during the execution of the method.
+This only means that inside the method the final variables can not be reassigned.
+● Suppose in question 4, the Car class has a method setColor(Color
+color){…}, inside doSomething method, Can we call
+aCar.setColor(red);?
+○ Yes we can, we can reset inside of the value, but not reassigned.
+● Can we declare a static variable inside a method?
+○ You can't declare a static variable inside a method, static means that it's a
+variable/method of a class, it belongs to the whole class but not to one of its
+certain objects. This means that static keyword can be used only in a 'class
+scope' i.e. it doesn't have any sense inside methods.
+● What is the difference between interface and abstract class?
+○ An abstract class permits you to make functionality that subclasses can
+implement or override whereas an interface only permits you to state functionality
+but not to implement it. A class can extend only one abstract class while a class
+can implement multiple interfaces.
+● Can an abstract class be defined without any abstract methods?
+○ Yes.
+● Since there is no way to create an object of abstract class, what’s the
+point of constructors of abstract class?
+○ The main purpose of the constructor is to initialize the newly created object. In
+abstract class, we still have instance variables and non-abstract methods. We
+need to initialize the non-abstract methods and instance variables, so we need to
+have a constructor.
+● What is a native method?
+○ A native method is a Java method (either an instance method or a class method)
+whose implementation is also written in another programming language such as
+C/C++.
+● What is marker interface?
+○ A maker interface is an interface that has no mtthods or constants inside it. It
+provides run-time type information about objects so the compiler and JVM have
+additional information about the object.
+● Why to override equals and hashCode methods?
+● What’s the difference beween int and Integer?
+○ Primitive variable vs Obeject. Wrapper class
+● What is serialization?
+○ Serialization is the process of converting an object into a stream of bytes to store
+the object or transmit it to memory, a database, or a file. Its main purpose is to
+save the state of an object in order to be able to recreate it when needed
+● Create List and Map. List A contains 1,2,3,4,10(integer) . Map B
+contains ("a","1") ("b","2") ("c","10") (key = string, value = string)
+○ List<Integer> A = new ArrayList<>();
+○ A.add(1);
+○ A.add(2);
+○ A.add(3);
+○ A.add(4);
+○ Map<String, String> B = new HashMap<>();
+○ B.put(“a”, “1”);
+○ B.put(“b”, “2”);
+○ B.put(“c”, “10”);
+Question: get a list which contains all the elements in list A, but not in map
+B.
+● Implement a group of classes that have common behavior/state as
+Shape. Create Circle, Rectangle and Square for now as later on we
+may need more shapes. They should have the ability to calculate the
+area. They should be able to compare using area. Please write a
+program to demonstrate the classes and comparison. You can use
+either abstract or interface. Comparator or Comparable interface.
+class Rectangle extends Shape{
+private final double width, length;//sides
+public Rectangle(double width, double length) {
+this.width = width;
+this.length = length;
+}
+@Override
+public double area()
+{
+// TODO Auto-generated method stub
+return width * length;
+}
+@Override
+public int compareTo(Shape o)
+{
+// TODO Auto-generated method stub
+return (int) (this.area() - o.area());
+}
+}
+class Square extends Shape {
+private final int length;
+public Square(int len) {
+this.length = len;
+}
+@Override
+public double area()
+{
+// TODO Auto-generated method stub
+return length * length;
+}
+@Override
+public int compareTo(Shape o)
+{
+// TODO Auto-generated method stub
+return (int) (this.area() - o.area());
+}
+}
+class Circle extends Shape {
+private final double radius;
+final double pi = Math.PI;
+public Circle(double radius) {
+this.radius = radius;
+}
+@Override
+public double area()
+{
+// TODO Auto-generated method stub
+return pi * Math.pow(radius, 2);
+}
+@Override
+public int compareTo(Shape o)
+{
+// TODO Auto-generated method stub
+return (int) (this.area() - o.area());
+}
+}
+abstract class Shape implements Comparable<Shape>{
+public abstract double area();
+}
